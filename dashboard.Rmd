@@ -10,9 +10,11 @@ runtime: shiny
 ```{r setup, include=FALSE}
 library(shiny)
 library(flexdashboard)
+library(shinydashboard)
 library(dplyr)
 source("gapModule_flexdashboard.R")
 source("data.R")
+source("boxvalue_module.R")
 ```
 
 Column {data-width=650}
@@ -32,13 +34,31 @@ Column {data-width=350}
 
 ```{r}
 worldPhonesUI("europe")
-callModule(worldPhones, "europe", all_data)
+callModule(worldPhones, "europe", europe_data)
 ```
 
 ### Chart C
 
 ```{r}
 worldPhonesUI("americas")
-callModule(worldPhones, "americas", all_data)
+callModule(worldPhones, "americas", americas_data)
+```
+
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart D
+
+```{r}
+iboxesUI("americas_box")
+callModule(iboxes, "americas_box", data = 0.5555)
+```
+
+### Chart E
+
+```{r}
+iboxesUI("americas_box2")
+callModule(iboxes, "americas_box2", data = 0.8)
 ```
 
