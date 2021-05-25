@@ -1,0 +1,44 @@
+---
+title: "flexdashboard: Shiny Embedding"
+output: 
+  flexdashboard::flex_dashboard:
+    social: menu
+    source_code: embed 
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+library(shiny)
+library(flexdashboard)
+library(dplyr)
+source("worldPhones.R")
+source("data.R")
+```
+
+Column {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+worldPhonesUI("all")
+callModule(worldPhones, "all", all_data)
+```
+
+Column {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+worldPhonesUI("europe")
+callModule(worldPhones, "europe", all_data)
+```
+
+### Chart C
+
+```{r}
+worldPhonesUI("americas")
+callModule(worldPhones, "americas", all_data)
+```
+
