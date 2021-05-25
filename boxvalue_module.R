@@ -7,7 +7,7 @@ iboxesUI <- function(id) {
     fillCol(
       # box(height = 200,
         height = 600, flex = c(NA, 1),
-        valueBoxOutput(ns("boxvalue"))
+        valueBoxOutput(ns("boxvalue"), width=12)
       # )
     )
   # )
@@ -20,8 +20,8 @@ iboxes <- function(input, output, session, data) {
     shinydashboard::valueBox(
       value = data,
       subtitle = "Value",
-      icon = icon("area-chart"),
-      color = "aqua",
+      icon = icon("arrow-up"),
+      color = "blue",
       width = 12
     )
   })

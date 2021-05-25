@@ -15,6 +15,7 @@ library(dplyr)
 source("gapModule_flexdashboard.R")
 source("data.R")
 source("boxvalue_module.R")
+source("infobox_module.R")
 ```
 
 Column {data-width=650}
@@ -60,6 +61,38 @@ callModule(iboxes, "americas_box", data = 0.5555)
 ```{r}
 iboxesUI("americas_box2")
 callModule(iboxes, "americas_box2", data = 0.8)
+
+```
+
+### Chart F
+
+```{r}
+iboxesUI("americas_box3")
+callModule(iboxes, "americas_box3", data = 5)
+
+```
+
+### Chart G
+
+```{r}
+iboxesUI("luigi")
+callModule(iboxes, "luigi", data = 5)
+
+```
+
+### Chart H
+
+```{r}
+infoboxesUI("ciao")
+callModule(infoboxes, "ciao", data = 5)
+
+```
+
+### Chart I
+
+```{r}
+infoboxesUI("ciao2")
+callModule(infoboxes, "ciao2", data = 555)
 
 ```
 
